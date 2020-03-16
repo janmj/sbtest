@@ -1,0 +1,17 @@
+
+spring:
+  profiles.active: develop
+
+---
+spring:
+  profiles: develop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: test
+    password: test
+    hikari:
+      connectionTimeout: 5000
+      maximumPoolSize: 5
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties.hibernate.default_schema: sbtest
