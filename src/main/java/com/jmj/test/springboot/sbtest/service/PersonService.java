@@ -16,4 +16,8 @@ public class PersonService {
     public List<Person> searchEtternavn(String etternavn){
         return personRepository.findByEtternavn(etternavn);
     }
+
+    public Person searchByFornavn(String fornavn){
+        return personRepository.findByFornavn(fornavn);
+    }
 }

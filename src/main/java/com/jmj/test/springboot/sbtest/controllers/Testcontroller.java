@@ -3,8 +3,7 @@ package com.jmj.test.springboot.sbtest.controllers;
 import com.jmj.test.springboot.sbtest.dao.Person;
 import com.jmj.test.springboot.sbtest.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +23,9 @@ public class Testcontroller {
         return sb.toString();
     }
 
+    @GetMapping("/person/{fornavn}")
+    public Person findPerson(@PathVariable String fornavn){
+        return personService.searchByFornavn(fornavn);
+    }
 
 }
